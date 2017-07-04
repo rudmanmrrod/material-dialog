@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<link href="src/materialize/css/materialize.css" rel="stylesheet" type="text/css">
 		<script src="src/jquery.min.js" type="text/javascript"></script>
 		<script src="src/materialize/js/materialize.js" type="text/javascript"></script>
@@ -19,6 +20,15 @@
 		</style>
 	</head>
 	<body>
+		<nav class="teal lighten-2">
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">Materialize Dialog</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="#install">Installation</a></li>
+					<li><a href="#usage">Usage</a></li>
+				</ul>
+			</div>
+		</nav>
 		<div class="container">
 			<h1 class="center">Materialize Dialog</h1><hr>
 			<p>A simple library tinked to easy Materialize JavaScript Modals</p>
@@ -41,7 +51,7 @@
 MaterialDialog.alert("Hello");			
 			</pre>
 
-			<h4>Installation</h4>
+			<h3 id="install">Installation</h3>
 			<p>Download the source <a href="https://github.com/rudmanmrrod/material-dialog/releases/download/v1.01/material-dialog-v1.01.zip">here</a></p>
 			
 			<p>Include materialize css and js in head, materialize.js require jQuery.</p>
@@ -56,6 +66,8 @@ MaterialDialog.alert("Hello");
 			</pre>
 			
 			<p>Material Dialog need jQuery and materialize.js</p>
+			
+			<h3 id="usage">Usage</h3><hr/>
 			
 			<h4>Alert</h4>
 			<p>Usage Example</p>
@@ -237,6 +249,19 @@ MaterialDialog.alert(
 				<button class="btn" onclick="material_property();">Click Here</button>
 			</div>
 		</div>
+		<footer class="page-footer teal lighten-2">
+			<div class="container">
+				<span class="white-text">
+				<span style="font: 18px Arial, sans-serif; display: inline-block; transform: rotate(180deg);">&copy;</span>
+				 2017 Copyleft Rodrigo Boet
+				 </span>
+				 <div class="right">
+					<a class="grey-text text-lighten-4" href="https://github.com/rudmanmrrod">Github</a>
+					<a class="grey-text text-lighten-4" href="mailto:rudmanmrrod@gmail.com">Gmail</a>
+				 </div>
+				
+			</div>
+		</footer>
 		<script>
 			function alert_example(){
 				MaterialDialog.alert(
