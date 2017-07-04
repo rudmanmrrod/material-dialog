@@ -22,3 +22,6 @@ Can be simplified to
 ```		
 MaterialDialog.alert("Hello");	
 ```
+## Try yourself
+
+See in action [Here](https://rudmanmrrod.github.io/material-dialog/)
