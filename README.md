@@ -1,2 +1,2 @@
 # material-dialog
-Javascript implementatition of materialize modal's
+Javascript implementation of materialize modal's
