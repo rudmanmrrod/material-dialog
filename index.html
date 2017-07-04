@@ -253,7 +253,7 @@ MaterialDialog.alert(
 			<div class="container">
 				<span class="white-text">
 				<span style="font: 18px Arial, sans-serif; display: inline-block; transform: rotate(180deg);">&copy;</span>
-				 2017 Copyleft Rodrigo Boet
+				 <span id="date"></span> Copyleft - Rodrigo Boet
 				 </span>
 				 <div class="right">
 					<a class="grey-text text-lighten-4" href="https://github.com/rudmanmrrod">Github</a>
@@ -263,6 +263,8 @@ MaterialDialog.alert(
 			</div>
 		</footer>
 		<script>
+			$('#date').html(new Date().getFullYear());
+			
 			function alert_example(){
 				MaterialDialog.alert(
 					'Message',
