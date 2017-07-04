@@ -4,7 +4,7 @@
 		<link href="src/materialize/css/materialize.css" rel="stylesheet" type="text/css">
 		<script src="src/jquery.min.js" type="text/javascript"></script>
 		<script src="src/materialize/js/materialize.js" type="text/javascript"></script>
-		<script src="src/material-dialog.js" type="text/javascript"></script>
+		<script src="src/material-dialog.min.js" type="text/javascript"></script>
 		<style>
 			pre,xmp{
 				background-color:#f2f2f2;
@@ -22,26 +22,46 @@
 		<div class="container">
 			<h1 class="center">Materialize Dialog</h1><hr>
 			<p>A simple library tinked to easy Materialize JavaScript Modals</p>
-			
+			<h4>This</h4>
+			<pre class="language-markup">
+				
+&lt;div id="modal1" class="modal"&gt;
+	&lt;div class="modal-content"&gt;
+		&lt;h4&gt;Alert&lt;/h4&gt;
+		&lt;p&gt;Hello&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;a href="#!" class="btn modal-close"&gt;Close&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;	
+			</pre>
+			<h4>Can be simplified to </h4>
+			<pre>
+				
+MaterialDialog.alert("Hello");			
+			</pre>
+
 			<h4>Installation</h4>
 			<p>Download the source <a href="#">here</a></p>
 			
 			<p>Include materialize css and js in head, materialize.js require jQuery.</p>
-			<xmp>
-<head>
-	<link href="src/materialize/css/materialize.css" rel="stylesheet" type="text/css">
-	<script src="src/jquery.min.js" type="text/javascript"></script>
-	<script src="src/materialize/js/materialize.js" type="text/javascript"></script>
-	<script src="src/material-dialog.js" type="text/javascript"></script>
-</head>
-			</xmp>
+			<pre class="language-markup">
+				
+&lt;head&gt;
+	&lt;link href="src/materialize/css/materialize.css" rel="stylesheet" type="text/css"&gt;
+	&lt;script src="src/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+	&lt;script src="src/materialize/js/materialize.js" type="text/javascript"&gt;&lt;/script&gt;
+	&lt;script src="src/material-dialog.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+			</pre>
 			
 			<p>Material Dialog need jQuery and materialize.js</p>
 			
 			<h4>Alert</h4>
 			<p>Usage Example</p>
-
-			<pre>
+			
+			<pre class="language-markup">
+				
 MaterialDialog.alert(
 	'Message', // Alert Body (Acepts html tags)
 	{
@@ -58,12 +78,13 @@ MaterialDialog.alert(
 	}
 );
 			</pre>
+			
 			<div class="center">
 				<h5>Example</h5>
 				<button class="btn" onclick="alert_example();">Click Here</button>
 			</div>
 			<p>Options</p>
-			<table class="responsive-table bordered">
+			<table class="bordered">
 				<thead>
 					<tr>
 						<th>Method</th>
@@ -103,7 +124,8 @@ MaterialDialog.alert(
 			</table>
 			<h4>Dialog</h4>
 			<p>Usage Example</p>
-			<pre>
+			<pre class="language-markup">
+				
 MaterialDialog.dialog(
 	"Text here",
 	{
@@ -136,7 +158,7 @@ MaterialDialog.dialog(
 			</div>
 			
 			<p>Options</p>
-			<table class="responsive-table bordered">
+			<table class="bordered">
 				<thead>
 					<tr>
 						<th>Method</th>
@@ -191,7 +213,8 @@ MaterialDialog.dialog(
 			</table>
 			<h4>Extra</h4>
 			<p>In options part, you can pass any materialize modal property's</p>
-			<pre>
+			<pre class="language-markup">
+				
 MaterialDialog.alert(
 	'Message', // Alert Body (Acepts html tags)
 	{

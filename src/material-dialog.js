@@ -37,7 +37,9 @@ MaterialDialog.templates = {
  * @param text Receive modal text body
  * @param options Receive objects with options
 */
-MaterialDialog.alert = function(text = '', options = {}){
+MaterialDialog.alert = function(text, options){
+	text = typeof text !== 'undefined' ? text : '';
+	options = typeof options !== 'undefined' ? options : {};
 	var button_close = '<button class="btn modal-close button_class close">button_text</button>';
 	var callback = null;
 	var other_options = options;
@@ -108,7 +110,9 @@ MaterialDialog.replace_confirm_button = function(body){
  * @param text Receive modal text body
  * @param options Receive objects with options
 */
-MaterialDialog.dialog = function(text = '', options = {}){
+MaterialDialog.dialog = function(text, options){
+	text = typeof text !== 'undefined' ? text : '';
+	options = typeof options !== 'undefined' ? options : {};
 	var button_close = '';
 	var callback_close = null;
 	var button_confirm = '';
@@ -172,7 +176,3 @@ MaterialDialog.dialog = function(text = '', options = {}){
 		});
 	}
 };
-
-
-
-
