@@ -69,17 +69,19 @@ MaterialDialog.alert = function(text, options){
 	};
 	
 	
-	$('body').append(this.templates.alert);
-	$('.material-alert').find('.modal-title').last().html(options.title);
-	$('.material-alert').find('.modal-content').last().append(text);
-	$('.material-alert').find('.modal-footer').last().append(options.footer);
-	$('.material-alert').find('.modal-footer').last().append(options.button);
-	$('.material-alert').modal(other_options);
-	$('.material-alert').last().modal("open");
+	var body = document.getElementsByTagName('body')[0];
+	body.insertAdjacentHTML('beforeend',this.templates.alert);
+	var last_material = document.getElementsByClassName('material-alert')[document.getElementsByClassName('material-alert').length-1]
+	last_material.getElementsByClassName('modal-title')[0].textContent = options.title;
+	last_material.getElementsByClassName('modal-content')[0].textContent = text;
+	last_material.getElementsByClassName('modal-footer')[0].insertAdjacentHTML('beforeend',options.footer);
+	last_material.getElementsByClassName('modal-footer')[0].insertAdjacentHTML('beforeend',options.button);
+	var instance = M.Modal.init(last_material,other_options)
+	instance.open()
 	
 	if(callback){
-		var close = $('.material-alert .close').last();
-		$(close).click(function(){
+		var close = last_material.getElementsByClassName('close')[0]
+		close.addEventListener('click',function(){
 			callback.call();
 		});
 	}
@@ -157,21 +159,23 @@ MaterialDialog.dialog = function(text, options){
 	}
 	
 	
-	$('body').append(body);
-	$('.material-dialog').find('.modal-content').last().append(text);
-	$('.material-dialog').modal(other_options);
-	$('.material-dialog').last().modal("open");
+	var html_body = document.getElementsByTagName('body')[0];
+	html_body.insertAdjacentHTML('beforeend',body);
+	var last_material = document.getElementsByClassName('material-dialog')[document.getElementsByClassName('material-dialog').length-1]
+	last_material.getElementsByClassName('modal-content')[0].insertAdjacentHTML('beforeend',text);
+	var instance = M.Modal.init(last_material,other_options)
+	instance.open()
 	
 	if(callback_close){
-		var close = $('.material-dialog .close').last();
-		$(close).click(function(){
+		var close = last_material.getElementsByClassName('close')[0];
+		close.addEventListener('click',function(){
 			callback_close.call();
 		});
 	}
 	
 	if(callback_confirm){
-		var close = $('.material-dialog .confirm').last();
-		$(close).click(function(){
+		var confirm = last_material.getElementsByClassName('confirm')[0];
+		confirm.addEventListener('click',function(){
 			callback_confirm.call();
 		});
 	}

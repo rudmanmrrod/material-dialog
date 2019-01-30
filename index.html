@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="src/materialize/css/materialize.css" rel="stylesheet" type="text/css">
-		<script src="src/jquery.min.js" type="text/javascript"></script>
 		<script src="src/materialize/js/materialize.js" type="text/javascript"></script>
 		<script src="src/material-dialog.min.js" type="text/javascript"></script>
 		<style>
@@ -226,23 +226,24 @@ MaterialDialog.dialog(
 				</tbody>
 			</table>
 			<h4>Extra</h4>
-			<p>In options part, you can pass any materialize modal property's</p>
+			<p>In options part, you can pass any materialize modal property's, for more info check
+				<a href="https://materializecss.com/modals.html" target="_blank">here</a></p>
 			<pre class="language-markup">
 				
 MaterialDialog.alert(
 	'Message', // Alert Body (Acepts html tags)
 	{
 		title:'Alert Modal', // Modal title
-		dismissible: true, // Modal can be dismissed by clicking outside of the modal
+		dismissible: false, // Modal can be dismissed by clicking outside of the modal
 		opacity: .5, // Opacity of modal background
 		inDuration: 300, // Transition in duration
 		outDuration: 200, // Transition out duration
 		startingTop: '4%', // Starting top style attribute
 		endingTop: '10%', // Ending top style attribute
-		ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters alert("Ready");
-			console.log(modal, trigger);
+		onOpenStart: function(modal) { // Callback for Modal open
+			console.log(modal);
 		},
-		complete: function() { alert('Closed'); } // Callback for Modal close
+		onCloseEnd: function() { alert('Closed'); } // Callback for Modal close
 	}
 );
 			</pre>
@@ -265,7 +266,7 @@ MaterialDialog.alert(
 			</div>
 		</footer>
 		<script>
-			$('#date').html(new Date().getFullYear());
+			document.getElementById("date").textContent = new Date().getFullYear()
 			
 			function alert_example(){
 				MaterialDialog.alert(
@@ -315,16 +316,16 @@ MaterialDialog.alert(
 					'Message', // Alert Body (Acepts html tags)
 					{
 						title:'Alert Modal', // Modal title
-						dismissible: true, // Modal can be dismissed by clicking outside of the modal
+						dismissible: false, // Modal can be dismissed by clicking outside of the modal
 						opacity: .5, // Opacity of modal background
 						inDuration: 300, // Transition in duration
 						outDuration: 200, // Transition out duration
 						startingTop: '4%', // Starting top style attribute
 						endingTop: '10%', // Ending top style attribute
-						ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters alert("Ready");
-							console.log(modal, trigger);
+						onOpenStart: function(modal) { // Callback for Modal open
+							console.log(modal);
 						},
-						complete: function() { alert('Closed'); } // Callback for Modal close
+						onCloseEnd: function() { alert('Closed'); } // Callback for Modal close
 					}
 				);			
 			}
