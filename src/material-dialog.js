@@ -73,7 +73,7 @@ MaterialDialog.alert = function(text, options){
 	body.insertAdjacentHTML('beforeend',this.templates.alert);
 	var last_material = document.getElementsByClassName('material-alert')[document.getElementsByClassName('material-alert').length-1]
 	last_material.getElementsByClassName('modal-title')[0].textContent = options.title;
-	last_material.getElementsByClassName('modal-content')[0].textContent = text;
+	last_material.getElementsByClassName('modal-content')[0].insertAdjacentHTML('beforeend',text);
 	last_material.getElementsByClassName('modal-footer')[0].insertAdjacentHTML('beforeend',options.footer);
 	last_material.getElementsByClassName('modal-footer')[0].insertAdjacentHTML('beforeend',options.button);
 	var instance = M.Modal.init(last_material,other_options)
